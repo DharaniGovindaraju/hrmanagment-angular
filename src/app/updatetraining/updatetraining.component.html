@@ -1,0 +1,255 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+
+  <div class="container">
+      <h1>Update Training </h1>
+      <div class="card">
+              <ul class="nav nav-tabs nav-tabs-neutral" role="tablist" data-background-color="orange">
+                  <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#trainingupdate" role="tab" aria-expanded="true">Training Update</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#approvetainee" role="tab" aria-expanded="false">Approve Trainee</a>
+                  </li>
+              </ul>
+              <div class="card-body">
+                  <!-- Tab panes -->
+                  <div class="tab-content text-left">
+                    <div class="tab-pane active" id="trainingupdate" role="tabpanel" aria-expanded="true">
+                      <form #trainingUpdateForm="ngForm" ngSubmit="onUpdate()" novalidate>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Training Name</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" value="" #trainingName="ngModel" name="training" minlength="6" required ngModel>
+                                    <div *ngIf="trainingName.errors && (trainingName.touched|| trainingName.dirty)" class="alert text-danger">
+                                            <div [hidden]="!trainingName.errors.required">
+                                                * Training name is required
+                                            </div> 
+                                            <div [hidden]="!trainingName.errors.minlength">
+                                                *Please enter minimum 6 character
+                                             </div>                                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker-container">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Date</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control date-picker" value="10/05/2016" value="10/05/2016"  
+                                        data-datepicker-color="primary" #trainingDate="ngModel" name="trainingdate" required ngModel>
+                                        <span class="input-group-text">
+                                            <i class="now-ui-icons ui-1_calendar-60"></i>
+                                        </span>
+                                        <div *ngIf="trainingDate.errors && trainingDate.touched" class="alert text-danger">
+                                                <div [hidden]="!trainingDate.errors.required">
+                                                    * Select date
+                                                </div>                                                      
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Certificate</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="file" class="form-control" value="" #certificates="ngModel" name="certificate" required ngModel>
+                                    <div *ngIf="certificates.errors && certificates.touched" class="alert text-danger">
+                                            <div [hidden]="!certificates.errors.required">
+                                                * Choose Certificate<br>
+                                            </div>                                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-6 col-sm-12 text-center">
+                                    <button class="btn btn-round" type="button">Reset</button>
+                                </div>
+                                <div class="col-md-6 col-sm-12 text-center">
+                                    <button class="btn btn-primary btn-round" type="Submit" [disabled]="!trainingUpdateForm.valid">Update</button>
+                                </div>
+                        </div>
+                      </form>
+                        <div class="col-md-12 ml-auto mr-auto">
+                                <div class="card card-plain">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead class="">
+                                                    <tr class="text-left">
+                                                        <th>
+                                                            #
+                                                        </th>
+                                                        <th>
+                                                            Training Name
+                                                        </th>
+                                                        <th>
+                                                            Date
+                                                        </th>
+                                                        <th>
+                                                            Certificate
+                                                        </th>
+                                                        <th>
+                                                            Status
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="text-left">
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                           Training 1
+                                                        </td>
+                                                        <td>
+                                                            15/3/2018
+                                                        </td>
+                                                        <td>
+                                                            yes
+                                                        </td>
+                                                        <td>
+                                                            Pending
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="text-left">
+                                                            <td>
+                                                                1
+                                                            </td>
+                                                            <td>
+                                                               Training 2
+                                                            </td>
+                                                            <td>
+                                                                15/3/2018
+                                                            </td>
+                                                            <td>
+                                                                yes
+                                                            </td>
+                                                            <td>
+                                                                Approved
+                                                            </td>
+                                                        </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>                                    
+                            </div>
+                    </div>
+                      <div class="tab-pane" id="approvetainee" role="tabpanel" aria-expanded="false">
+                            <div class="card card-plain">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead class="text-left">
+                                                    <tr><th>
+                                                        #
+                                                    </th>
+                                                    <th>
+                                                        Resource
+                                                    </th>
+                                                    <th>
+                                                        Traning Name
+                                                    </th>
+                                                    <th>
+                                                        Date
+                                                    </th>
+                                                    <th>
+                                                        Certificate
+                                                    </th>
+                                                    <th>
+                                                        Actions
+                                                    </th>
+                                                </tr></thead>
+                                                <tbody  class="text-left">
+                                                    <tr>
+                                                        <td>
+                                                            5
+                                                        </td>
+                                                        <td>
+                                                            Paul Dickens
+                                                        </td>
+                                                        <td>
+                                                           Training 1 
+                                                        </td>
+                                                        <td>
+                                                            3/3/2018
+                                                        </td>
+                                                        <td>
+                                                           Yes
+                                                        </td>
+                                                        <td>
+                                                            <button type="button" rel="tooltip" class="btn btn-info btn-icon btn-sm btn-neutral " data-original-title="" title="">
+                                                                <i class="now-ui-icons ui-1_check"></i>
+                                                            </button>
+                                                             <button type="button" rel="tooltip" class="btn btn-danger btn-icon btn-sm btn-neutral " data-toggle="modal" data-target="#myModal">
+                                                                <i class="now-ui-icons ui-1_simple-remove"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            6
+                                                        </td>
+                                                        <td>
+                                                            Manuel Rico
+                                                        </td>
+                                                        <td>
+                                                            Training 2
+                                                        </td>
+                                                        <td>
+                                                            3/4/2018
+                                                        </td>
+                                                        <td>
+                                                            Yes
+                                                        </td>
+                                                        <td>
+                                                            <button type="button" rel="tooltip" class="btn btn-info btn-icon btn-sm btn-neutral " data-original-title="" title="">
+                                                                <i class="now-ui-icons ui-1_check"></i>
+                                                            </button>
+                                                             <button type="button" rel="tooltip" class="btn btn-danger btn-icon btn-sm btn-neutral " data-toggle="modal" data-target="#myModal">
+                                                                <i class="now-ui-icons ui-1_simple-remove"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  </div>
+<app-footer></app-footer>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <i class="now-ui-icons ui-1_simple-remove"></i>
+                    </button>
+                    <h4 class="title title-up">Approve Trainee</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are sure want to reject this request ? </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default">Continue</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>

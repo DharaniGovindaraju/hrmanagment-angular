@@ -1,0 +1,350 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+
+  <div class="container">
+      <h1>My Leave </h1>
+      <div class="card">
+              <ul class="nav nav-tabs nav-tabs-neutral" role="tablist" data-background-color="orange">
+                  <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#home1" role="tab" aria-expanded="true">Apply Leave</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#profile1" role="tab" aria-expanded="false">Leave Balance</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#messages1" role="tab" aria-expanded="false">Leave History</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#settings1" role="tab" aria-expanded="false">Leave Update</a>
+                  </li>
+              </ul>
+              <div class="card-body">
+                  <!-- Tab panes -->
+                  <div class="tab-content text-center">
+                      <div class="tab-pane active" id="home1" role="tabpanel" aria-expanded="true">
+                          <form #applyleaveForm="ngForm" (ngSubmit)="onApply(applyleaveForm.value)" novalidate>
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <div class="datepicker-container">
+                                          <div class="form-group">
+                                              <label>From</label>
+                                              <input type="text" class="form-control date-picker" value="10/05/2016" value="10/05/2016"  data-datepicker-color="primary"
+                                              name="fromDate" #fromDate="ngModel" required ngModel>
+                                              <span class="input-group-text">
+                                                  <i class="now-ui-icons ui-1_calendar-60"></i>
+                                              </span>                                              
+                                          </div>
+                                          <div *ngIf="fromDate.errors && fromDate.touched" class="alert text-danger">
+                                                <div [hidden]="!fromDate.errors.required">
+                                                    *From Date required
+                                                </div>                                                      
+                                           </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="datepicker-container">
+                                          <div class="form-group">
+                                              <label>To</label>
+                                              <input type="text" class="form-control date-picker" value="12/05/2016"  data-datepicker-color="primary"
+                                              name="toDate" #toDate="ngModel" required ngModel>
+                                              <span class="input-group-text">
+                                                  <i class="now-ui-icons ui-1_calendar-60"></i>
+                                              </span>
+                                          </div>
+                                          <div *ngIf="toDate.errors && toDate.touched" class="alert text-danger">
+                                                <div [hidden]="!toDate.errors.required">
+                                                    *To Date required
+                                                </div>                                                      
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-12">
+                                        <div class="form-group">
+                                                <label>Leave Type</label>
+                                                <div class="input-group">
+                                                    <select class="form-control selectpicker" name="leaveType" #leaveType="ngModel" required ngModel>
+                                                        <option class="bs-title-option" value="">Leave Type</option>
+                                                        <option value="1">Personal Leave</option>
+                                                        <option value="2">Sick Leave</option>
+                                                        <option value="3">Vocational Leave</option>
+                                                    </select>
+                                                </div>                                  
+                                                <div *ngIf="leaveType.errors && leaveType.touched" class="alert text-danger">
+                                                      <div [hidden]="!leaveType.errors.required">
+                                                          *Select Leave Type <br>
+                                                      </div>                                                      
+                                                </div>                                 
+                                        </div>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label>Reason</label>
+                                  <input type="text" class="form-control" value="" name="reason" #reason="ngModel" minlength="6" required ngModel>
+                                  <div *ngIf="reason.errors && (reason.touched || reason.dirty)" class="alert text-danger">
+                                        <div [hidden]="!reason.errors.required">
+                                            *Enter Reason
+                                        </div> 
+                                        <div [hidden]="!reason.errors.minlength">
+                                            *Please enter minimum 6 character
+                                        </div>                                                      
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <button class="btn btn-round" type="button">Reset</button>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <button class="btn btn-primary btn-round" type="submit" [disabled]="!applyleaveForm.valid" type="button">Apply</button>
+                                  </div>
+                              </div>
+                        </form>
+                      </div>
+                      <div class="tab-pane" id="profile1" role="tabpanel" aria-expanded="false">
+                        <div class="col-md-12 ml-auto mr-auto">
+                            <div class="card card-plain">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="">
+                                                <tr  class="text-left">
+                                                    <th>
+                                                        #
+                                                    </th>
+                                                    <th>
+                                                       Leave Type
+                                                    </th>
+                                                    <th>
+                                                        Balance
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr  class="text-left">
+                                                    <td>
+                                                        1
+                                                    </td>
+                                                    <td>
+                                                       Personal Leave
+                                                    </td>
+                                                    <td>
+                                                        10
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td>
+                                                        2
+                                                    </td>
+                                                    <td>
+                                                       Vactional Leave
+                                                    </td>
+                                                    <td>
+                                                        10
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td>
+                                                        3
+                                                    </td>
+                                                    <td>
+                                                       Sick Leave
+                                                    </td>
+                                                    <td>
+                                                        10
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>                                    
+                        </div>
+                      </div>
+                      <div class="tab-pane" id="messages1" role="tabpanel" aria-expanded="false">
+                          <div class="col-md-12 ml-auto mr-auto">
+                              <div class="card card-plain">
+                                  <div class="card-body">
+                                      <div class="table-responsive">
+                                          <table class="table">
+                                              <thead class="">
+                                                  <tr class="text-left">
+                                                      <th>
+                                                          #
+                                                      </th>
+                                                      <th>
+                                                          Created On
+                                                      </th>
+                                                      <th>
+                                                          Leave Type
+                                                      </th>
+                                                      <th>
+                                                          Days
+                                                      </th>
+                                                      <th>
+                                                          From
+                                                      </th>
+                                                      <th>
+                                                          To
+                                                      </th>
+                                                  </tr>
+                                              </thead>
+                                              <tbody>
+                                                  <tr class="text-left">
+                                                      <td>
+                                                          1
+                                                      </td>
+                                                      <td>
+                                                          15/10/2016
+                                                      </td>
+                                                      <td>
+                                                          Sick Leave
+                                                      </td>
+                                                      <td>
+                                                          2 Days
+                                                      </td>
+                                                      <td>
+                                                          15/10/2016
+                                                      </td>
+                                                      <td>
+                                                          17/10/2016
+                                                      </td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                      </div>
+                                  </div>
+                              </div>                                    
+                          </div>
+                      </div>
+                      <div class="tab-pane" id="settings1" role="tabpanel" aria-expanded="false">
+                        <form #leaveupdateForm="ngForm" (ngSubmit)="onUpdate(leaveupdateForm.value)" novalidate> 
+                          <div class="col-md-8 col-md-offset-2 ml-auto mr-auto">
+                            <div class="card card-plain">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr  class="text-left">
+                                                    <td>
+                                                        <label>Select Year</label>
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-control selectpicker" name="yearSelect" #yearSelect="ngModel" required ngModel>
+                                                            <option class="bs-title-option" value="">2015</option>
+                                                            <option value="1">2016</option>
+                                                            <option value="2">2017</option>
+                                                            <option value="3">2018</option>
+                                                            <option value="1">2019</option>
+                                                            <option value="2">2020</option>
+                                                            <option value="3">2021</option>
+                                                            <option value="2">2022</option>
+                                                            <option value="3">2023</option>
+                                                            <option value="2">2024</option>
+                                                            <option value="3">2025</option>
+                                                            <option value="2">2026</option>
+                                                            <option value="3">2027</option>
+                                                            <option value="2">2028</option>
+                                                            <option value="3">2029</option>
+                                                            <option value="2">2030</option>
+                                                            <option value="3">2031</option>
+                                                            <option value="2">2032</option>
+                                                            <option value="3">2033</option>
+                                                            <option value="2">2034</option>
+                                                            <option value="3">2035</option>
+                                                            <option value="2">2036</option>
+                                                            <option value="3">2037</option>
+                                                            <option value="2">2038</option>
+                                                            <option value="3">2039</option>
+                                                            <option value="2">2040</option>
+                                                            <option value="3">2041</option>
+                                                            <option value="2">2042</option>
+                                                            <option value="3">2043</option>
+                                                            <option value="2">2044</option>
+                                                            <option value="3">2045</option>
+                                                            <option value="2">2046</option>
+                                                            <option value="3">2047</option>
+                                                            <option value="2">2048</option>
+                                                            <option value="3">2049</option>
+                                                            <option value="2">2050</option>
+                                                        </select>
+                                                        <div *ngIf="yearSelect.errors && yearSelect.touched" class="alert text-danger">
+                                                                <div [hidden]="!yearSelect.errors.required">
+                                                                    *Select year <br>
+                                                                </div>                                                      
+                                                        </div>
+                                                    </td>                                                    
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td>
+                                                        <label>Personal Leave</label>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" min="1" max="20" placeholder="10" #personalLeave="ngModel" name="personalLeave" required ngModel>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                    <div *ngIf="personalLeave.errors && personalLeave.touched" class="alert text-danger">
+                                                                            <div [hidden]="!personalLeave.errors.required">
+                                                                                *Select Personal leave <br>
+                                                                            </div>                                                      
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td>
+                                                        <label>Sick Leave</label>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" min="1" max="20" placeholder="10" #sickLeave="ngModel" name="sickLeave" required ngModel> 
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div *ngIf="sickLeave.errors && sickLeave.touched" class="alert text-danger">
+                                                                    <div [hidden]="!sickLeave.errors.required">
+                                                                        *Select sick leave <br>
+                                                                    </div>                                                      
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td>
+                                                        <label>Vactional Leave</label>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" min="1" max="20" placeholder="10" #VactionalLeave="ngModel" name="VactionalLeave" required ngModel> 
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div *ngIf="VactionalLeave.errors && VactionalLeave.touched" class="alert text-danger">
+                                                                    <div [hidden]="!VactionalLeave.errors.required">
+                                                                        *Select Vactional leave <br>
+                                                                    </div>                                                      
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>                                    
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-round" type="button">Reset</button>
+                            </div>
+                            <div class="col-md-2 col-md-offset-2">
+                                <button class="btn btn-primary btn-round" type="submit" [disabled]="!leaveupdateForm.valid" type="button">Update</button>
+                            </div>
+                        </div>
+                       </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  </div>
+  <app-footer></app-footer>
+</div>

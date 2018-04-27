@@ -1,0 +1,32 @@
+.input-group-text{
+    position: absolute;
+    right: 1.5rem;
+    top: 0.8rem;
+}
+.form-control{
+	position: relative;
+}
+@media screen and (max-width: 768px){
+    .nav-tabs .nav-item>.nav-link{
+        padding: 11px 12px;
+    }
+    .btn.btn-icon.btn-sm{
+        height: 0.875rem;
+        min-width: 0.875rem;
+        width: 0.875rem;
+        /* margin-left: 10%;
+        margin-right: 10%; */
+        margin: 0 10%;
+    }
+    h1{
+		font-size: 2.5em;
+	}
+}
+.btn.btn-icon.btn-sm{
+    margin-top: -0.3rem;
+}
+.alert{
+	font-size: 0.7rem;
+	float: left;
+	padding: 0 0.5rem;
+}

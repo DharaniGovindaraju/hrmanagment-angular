@@ -1,0 +1,169 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+
+  <div class="container">
+      <h1>Dashboard </h1>
+      <div class="alert alert-success" role="alert">
+          <div class="container">
+              <div class="alert-icon">
+                  <i class="now-ui-icons ui-1_check"></i>
+              </div>
+              You successfully approved your leave.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">
+                      <i class="now-ui-icons ui-1_simple-remove"></i>
+                  </span>
+              </button>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-9">
+              <div class="card">
+                  <div class="card-header">
+                      <span>My Tasks</span>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class="">
+
+                                  <tr>
+                                      <th class="text-center">#</th>
+                                      <th>Resource Name</th>
+                                      <th>Description</th>
+                                      <th class="text-center">Created On</th>
+                                      <th class="text-right">Actions</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td class="text-center">1</td>
+                                      <td>Shiva</td>
+                                      <td>Sick leave</td>
+                                      <td class="text-center">2013</td>
+                                      <td class="text-right">
+                                          <button type="button" rel="tooltip" class="btn btn-info btn-icon btn-sm btn-neutral " data-original-title="" title="">
+                                              <i class="now-ui-icons ui-1_check"></i>
+                                          </button>
+                                           <button type="button" rel="tooltip" class="btn btn-danger btn-icon btn-sm btn-neutral " data-toggle="modal" data-target="#myModal">
+                                              <i class="now-ui-icons ui-1_simple-remove"></i>
+                                          </button>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                          <td class="text-center">2</td>
+                                          <td>Prabhakar</td>
+                                          <td>Personal Leave</td>
+                                          <td class="text-center">2013</td>
+                                          <td class="text-right">
+                                              <button type="button" rel="tooltip" class="btn btn-info btn-icon btn-sm btn-neutral " data-original-title="" title="">
+                                                  <i class="now-ui-icons ui-1_check"></i>
+                                              </button>
+                                               <button type="button" rel="tooltip" class="btn btn-danger btn-icon btn-sm btn-neutral " data-toggle="modal" data-target="#myModal">
+                                                  <i class="now-ui-icons ui-1_simple-remove"></i>
+                                              </button>
+                                          </td>
+                                      </tr>
+                                      
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+              <div class="card">
+                      <div class="card-header">
+                          <span>Announcements</span>
+                      </div>
+                      <div class="card-body">
+                          <div class="table-responsive">
+                              <table class="table">
+                                  <thead class="">
+
+                                      <tr>
+                                          <th>Title</th>
+                                          <th>Description</th>
+                                          <th class="text-center">Created On</th>
+                                          <th class="text-right"></th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td>Leave</td>
+                                          <td>Tomorrow will be holiday</td>
+                                          <td class="text-center">2013</td>
+                                          <td class="text-right">
+                                               <button type="button" rel="tooltip" class="btn btn-danger btn-icon btn-sm btn-neutral" data-original-title="" title="">
+                                                  <i class="now-ui-icons ui-1_simple-remove"></i>
+                                              </button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                              <td>Technology</td>
+                                              <td>Bootstrap 4 ui is now released</td>
+                                              <td class="text-center">2013</td>
+                                              <td class="text-right">
+                                                   <button type="button" rel="tooltip" class="btn btn-danger btn-icon btn-sm btn-neutral" data-original-title="" title="">
+                                                      <i class="now-ui-icons ui-1_simple-remove"></i>
+                                                  </button>
+                                              </td>
+                                          </tr>
+                                          
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+          </div>
+          <div class="col-md-3">
+              <div class="card">
+                  <div class="card-header">
+                      <span>Quick Links</span>
+                  </div>
+                  <div class="card-body padding20">
+                      <ul>
+                          <li class="nav-item">
+                              <a class="nav-link" routerLink="/applyleave">Leave Management</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" routerLink="/setgoal">Goals Management</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" routerLink="/updatetraining">Update Trainings</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" routerLink="/addresource">Add/Update Resource</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" routerLink="/report">Reports</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" routerLink="/viewlog">View Logs</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <app-footer></app-footer>
+  </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header justify-content-center">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                      <i class="now-ui-icons ui-1_simple-remove"></i>
+                  </button>
+                  <h4 class="title title-up">Leave Rejection</h4>
+              </div>
+              <div class="modal-body">
+                  <p>Are sure want to reject this request ? </p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default">Continue</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+              </div>
+          </div>
+      </div>
+  </div>

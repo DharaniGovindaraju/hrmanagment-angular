@@ -1,0 +1,595 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+
+  <div class="container">
+      <h1>Set Goal</h1>
+      <div class="card">
+              <ul class="nav nav-tabs nav-tabs-neutral" role="tablist" data-background-color="orange">
+                  <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#goalsummary" role="tab" aria-expanded="true">Goal Summary</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#setgoals" role="tab" aria-expanded="false">Set Goals</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#updateaction" role="tab" aria-expanded="false">Update Action</a>
+                  </li>
+              </ul>
+              <div class="card-body">
+                  <!-- Tab panes -->
+                  <div class="tab-content text-center">
+                      <div class="tab-pane active" id="goalsummary" role="tabpanel" aria-expanded="true">
+                          <div class="form-group">
+                                  <div class="row">
+                                      <div class="col-md-4">
+                                          <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Year</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    2018
+                                                </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="row">
+                                              <div class="col-md-6">
+                                                  <label>Resource</label>
+                                              </div>
+                                              <div class="col-md-6">
+                                                <select class="form-control selectpicker" name="selectresource" #selectresource="ngModel" required ngModel>
+                                                    <option class="bs-title-option" value="">Resource 1</option>
+                                                    <option value="1">Resource 2</option>
+                                                    <option value="2">Resource 3</option>
+                                                </select>
+                                                <div *ngIf="selectresource.errors && selectresource.touched" class="alert text-danger">
+                                                        <div [hidden]="!selectresource.errors.required">
+                                                            * Select Resource
+                                                        </div>                                                     
+                                                  </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                  <label>Rating</label>
+                                              </div>
+                                              <div class="col-md-6">
+                                                <select class="form-control selectpicker" #rating="ngModel" name="rating"
+                                                required ngModel>
+                                                    <option class="bs-title-option" value="">1</option>
+                                                    <option value="1">2</option>
+                                                    <option value="2">3</option>
+                                                    <option value="3">4</option>
+                                                    <option value="4">5</option>
+                                                </select>
+                                                <div *ngIf="rating.errors && rating.touched" class="alert text-danger">
+                                                        <div [hidden]="!rating.errors.required">
+                                                            * Select Rating
+                                                        </div>                                                     
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                  </div> 
+                          </div>
+                          <div class="card text-left">
+                              <div class="card-header">
+                                  <span>Organisation Goal</span>
+                              </div>
+                              <div class="card-body padding20">
+                                  <div class="form-group">
+                                      <div class="input-group">
+                                         <h6> Goal 1 </h6>
+                                      </div>
+                                  </div>                                   
+                                  <div class="form-group">
+                                    <label>Measured By</label>
+                                    <p>Performance</p>
+                                    <label>Action Taken</label>
+                                    <p>Action Perfomed</p>
+                                  </div>
+                                  <div class="form-group">
+                                      <div class="input-group">
+                                          <h6> Goal 2 </h6>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Measured By</label>
+                                    <p>Performance</p>
+                                    <label>Action Taken</label>
+                                    <p>Action Perfomed</p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="card text-left">
+                              <div class="card-header">
+                                  <span>Personal Goal</span>
+                              </div>
+                              <div class="card-body padding20">
+                                  <div class="form-group">
+                                      <div class="input-group">
+                                         <h6> Goal 1 </h6>
+                                      </div>
+                                  </div>                                   
+                                  <div class="form-group">
+                                    <label>Measured By</label>
+                                    <p>Performance</p>
+                                    <label>Action Taken</label>
+                                    <p>Action Perfomed</p>
+                                  </div>
+                                  <div class="form-group">
+                                      <div class="input-group">
+                                          <h6> Goal 2 </h6>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Measured By</label>
+                                    <p>Performance</p>
+                                    <label>Action Taken</label>
+                                    <p>Action Perfomed</p>
+                                  </div>
+                              </div>                                    
+                          </div>
+                          <div class="card text-left">
+                              <div class="card-header">
+                                  <span>Team Goal</span>
+                              </div>
+                              <div class="card-body padding20">
+                                  <div class="form-group">
+                                      <div class="input-group">
+                                         <h6> Goal 1 </h6>
+                                      </div>
+                                  </div>                                   
+                                  <div class="form-group">
+                                    <label>Measured By</label>
+                                    <p>Performance</p>
+                                    <label>Action Taken</label>
+                                    <p>Action Perfomed</p>
+                                  </div>
+                                  <div class="form-group">
+                                      <div class="input-group">
+                                          <h6> Goal 2 </h6>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Measured By</label>
+                                    <p>Performance</p>
+                                    <label>Action Taken</label>
+                                    <p>Action Perfomed</p>
+                                  </div>
+                              </div>                                    
+                          </div>
+                      </div>
+                      <div class="tab-pane" id="setgoals" role="tabpanel" aria-expanded="false"> 
+                        <form #setgoalForm="ngForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <label>Select Year</label>
+                                      </div>
+                                      <div class="col-md-4 col-md-offset-1">
+                                          <select class="form-control selectpicker" #selectyear="ngModel" required 
+                                          name="year" ngModel>
+                                              <option class="bs-title-option" value="">Select Year</option>
+                                              <option class="bs-title-option" value="">2015</option>
+                                              <option value="1">2016</option>
+                                              <option value="2">2017</option>
+                                              <option value="3">2018</option>
+                                              <option value="1">2019</option>
+                                              <option value="2">2020</option>
+                                              <option value="3">2021</option>
+                                              <option value="2">2022</option>
+                                              <option value="3">2023</option>
+                                              <option value="2">2024</option>
+                                              <option value="3">2025</option>
+                                              <option value="2">2026</option>
+                                              <option value="3">2027</option>
+                                              <option value="2">2028</option>
+                                              <option value="3">2029</option>
+                                              <option value="2">2030</option>
+                                              <option value="3">2031</option>
+                                              <option value="2">2032</option>
+                                              <option value="3">2033</option>
+                                              <option value="2">2034</option>
+                                              <option value="3">2035</option>
+                                              <option value="2">2036</option>
+                                              <option value="3">2037</option>
+                                              <option value="2">2038</option>
+                                              <option value="3">2039</option>
+                                              <option value="2">2040</option>
+                                              <option value="3">2041</option>
+                                              <option value="2">2042</option>
+                                              <option value="3">2043</option>
+                                              <option value="2">2044</option>
+                                              <option value="3">2045</option>
+                                              <option value="2">2046</option>
+                                              <option value="3">2047</option>
+                                              <option value="2">2048</option>
+                                              <option value="3">2049</option>
+                                              <option value="2">2050</option>
+                                          </select>
+                                          <div *ngIf="selectyear.errors && selectyear.touched" class="alert text-danger">
+                                                <div [hidden]="!selectyear.errors.required">
+                                                    * Select Year
+                                                </div>                                                     
+                                          </div>
+                                      </div>
+                                  </div> 
+                          </div>                
+                          <div class="form-group">
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <label>Goal Type</label>
+                                      </div>
+                                      <div class="col-md-4 col-md-offset-1">
+                                          <select class="form-control selectpicker" #selectgoal="ngModel" required 
+                                          name="goal" ngModel>
+                                              <option class="bs-title-option" value="">Select Any One</option>
+                                              <option value="1">Personal Goal</option>
+                                              <option value="2">Team Goal</option>
+                                          </select>
+                                          <div *ngIf="selectgoal.errors && selectgoal.touched" class="alert text-danger">
+                                                <div [hidden]="!selectgoal.errors.required">
+                                                    * Select Goal
+                                                </div>                                                     
+                                          </div>
+                                      </div>
+                                  </div> 
+                          </div>
+                          <div class="form-group">
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <label>Goal</label>
+                                      </div>
+                                      <div class="col-md-4 col-md-offset-1">
+                                          <input type="text" class="form-control" value=""
+                                          #goal="ngModel" name="goals" minlength="6" required ngModel>
+                                          <div *ngIf="goal.errors && (goal.touched || goal.dirty)" class="alert text-danger">
+                                                <div [hidden]="!goal.errors.required">
+                                                    * Goal is required
+                                                </div> 
+                                                <div [hidden]="!goal.errors.minlength">
+                                                    *Please enter minimum 6 character
+                                                 </div>                                                     
+                                          </div>
+                                      </div>
+                                  </div> 
+                          </div>  
+                          <div class="form-group">
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <label>Measured By</label>
+                                      </div>
+                                      <div class="col-md-4 col-md-offset-1">
+                                          <input type="text" class="form-control" value="" minlength="6" #measuredby="ngModel" 
+                                          name="measuredby" required ngModel>
+                                          <div *ngIf="measuredby.errors && (measuredby.touched || measuredby.dirty)" class="alert text-danger">
+                                                <div [hidden]="!measuredby.errors.required">
+                                                    * Measured by is required
+                                                </div> 
+                                                <div [hidden]="!measuredby.errors.minlength">
+                                                    *Please enter minimum 6 character
+                                                 </div>                                                     
+                                          </div>
+                                      </div>
+                                  </div> 
+                          </div> 
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <button class="btn btn-round" type="button">Reset</button>
+                              </div>
+                              <div class="col-md-4">
+                                  <button class="btn btn-danger btn-round" type="button">Cancel</button>
+                              </div>
+                              <div class="col-md-4">
+                                <button class="btn btn-primary btn-round" [disabled]="!setgoalForm.valid" type="Submit">Submit</button>
+                             </div>
+                          </div>
+                          </form> 
+                          <div class="col-md-12 ml-auto mr-auto">
+                              <div class="card card-plain">
+                                  <div class="card-body">
+                                      <div class="table-responsive">
+                                          <table class="table">
+                                              <thead class="text-left">
+                                                  <tr>
+                                                      <th>
+                                                          S.No
+                                                      </th>
+                                                      <th>
+                                                          Goal Type
+                                                      </th>
+                                                      <th>
+                                                          Goal
+                                                      </th>
+                                                      <th>
+                                                          Measured By
+                                                      </th>
+                                                  </tr>
+                                              </thead>
+                                              <tbody class="text-left">
+                                                  <tr>
+                                                      <td>
+                                                          1
+                                                      </td>
+                                                      <td>
+                                                          Organisation Type
+                                                      </td>
+                                                      <td>
+                                                          Complete 2 trainings
+                                                      </td>
+                                                      <td>
+                                                          Submit Certificates
+                                                      </td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                      </div>
+                                  </div>
+                              </div>                                    
+                          </div>              
+                      </div>
+                      <div class="tab-pane text-left" id="updateaction" role="tabpanel" aria-expanded="false">
+                          <div class="card">
+                              <div class="card-header">
+                                  <span>Organisation Goal</span>
+                              </div>
+                              <div class="card-body padding20">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="accordion" role="tablist" aria-multiselectable="true" class="card-collapse">
+                                                <div class="card card-plain">
+                                                    <div class="card-header" role="tab" id="headingOne">
+                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="">
+                                                            Goal 1
+                                                            <i class="now-ui-icons arrows-1_minimal-down float-right"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                                        <form #organtitationactionForm="ngForm" ngSubmit="onSave()">
+                                                        <div class="card-body">
+                                                                <div class="form-group">
+                                                                        <label>Measured By</label>
+                                                                        <p>Performance</p>
+                                                                        <label>Action Taken</label>
+                                                                        <input type="text" class="form-control" value="" #orgAction="ngModel" name="orgAction" minlength="6" required ngModel>
+                                                                        <div *ngIf="orgAction.errors && (orgAction.touched|| orgAction.dirty)" class="alert text-danger">
+                                                                                <div [hidden]="!orgAction.errors.required">
+                                                                                    * Action is required
+                                                                                </div> 
+                                                                                <div [hidden]="!orgAction.errors.minlength">
+                                                                                    *Please enter minimum 6 character
+                                                                                </div>                                                     
+                                                                        </div>
+                                                                </div>
+                                                            <div class="row text-center">
+                                                                <div class="col-md-6">
+                                                                    <button class="btn btn-round" type="button">Reset</button>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <button class="btn btn-primary btn-round" [disabled]="!organtitationactionForm.valid" type="Submit">Submit</button>                                                                   
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    </div>
+                                                    <div class="card card-plain">
+                                                        <div class="card-header" role="tab" id="headingTwo">
+                                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                                Goal 2
+                                                                <i class="now-ui-icons arrows-1_minimal-down float-right"></i>
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                                <form #organtitationaction1Form="ngForm" ngSubmit="onSave1()">
+                                                                        <div class="card-body">
+                                                                                <div class="form-group">
+                                                                                        <label>Measured By</label>
+                                                                                        <p>Performance</p>
+                                                                                        <label>Action Taken</label>
+                                                                                        <input type="text" class="form-control" value="" #orgAction1="ngModel" name="orgAction1" minlength="6" required ngModel>
+                                                                                        <div *ngIf="orgAction1.errors && (orgAction1.touched|| orgAction1.dirty)" class="alert text-danger">
+                                                                                                <div [hidden]="!orgAction1.errors.required">
+                                                                                                    * Action is required
+                                                                                                </div> 
+                                                                                                <div [hidden]="!orgAction1.errors.minlength">
+                                                                                                    *Please enter minimum 6 character
+                                                                                                </div>                                                     
+                                                                                        </div>
+                                                                                </div>
+                                                                            <div class="row text-center">
+                                                                                <div class="col-md-6">
+                                                                                    <button class="btn btn-round" type="button">Reset</button>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <button class="btn btn-primary btn-round" [disabled]="!organtitationaction1Form.valid" type="Submit">Submit</button>                                                                   
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                  
+                              </div>                                  
+                          </div>                                                          
+                      </div>
+                      <div class="card">
+                            <div class="card-header">
+                                <span>Personal Goal</span>
+                            </div>
+                            <div class="card-body padding20">
+                                  <div class="row">
+                                      <div class="col-md-12">
+                                          <div id="accordion" role="tablist" aria-multiselectable="true" class="card-collapse">
+                                              <div class="card card-plain">
+                                                  <div class="card-header" role="tab" id="headingOne">
+                                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapsedOne" aria-expanded="true" aria-controls="collapseOne" class="">
+                                                          Goal 1
+                                                          <i class="now-ui-icons arrows-1_minimal-down float-right"></i>
+                                                      </a>
+                                                  </div>
+                                                  <div id="collapsedOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                                        <form #personalactionForm="ngForm" ngSubmit="onSave()">
+                                                                <div class="card-body">
+                                                                        <div class="form-group">
+                                                                                <label>Measured By</label>
+                                                                                <p>Performance</p>
+                                                                                <label>Action Taken</label>
+                                                                                <input type="text" class="form-control" value="" #perAction="ngModel" name="perAction" minlength="6" required ngModel>
+                                                                                <div *ngIf="perAction.errors && (perAction.touched|| perAction.dirty)" class="alert text-danger">
+                                                                                        <div [hidden]="!perAction.errors.required">
+                                                                                            * Action is required
+                                                                                        </div> 
+                                                                                        <div [hidden]="!perAction.errors.minlength">
+                                                                                            *Please enter minimum 6 character
+                                                                                        </div>                                                     
+                                                                                </div>
+                                                                        </div>
+                                                                    <div class="row text-center">
+                                                                        <div class="col-md-6">
+                                                                            <button class="btn btn-round" type="button">Reset</button>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <button class="btn btn-primary btn-round" [disabled]="!personalactionForm.valid" type="Submit">Submit</button>                                                                   
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                        </form>
+                                                  </div>
+                                                  <div class="card card-plain">
+                                                      <div class="card-header" role="tab" id="headingTwo">
+                                                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsedTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                              Goal 2
+                                                              <i class="now-ui-icons arrows-1_minimal-down float-right"></i>
+                                                          </a>
+                                                      </div>
+                                                      <div id="collapsedTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                            <form #personalaction1Form="ngForm" ngSubmit="onSave()">
+                                                                    <div class="card-body">
+                                                                            <div class="form-group">
+                                                                                    <label>Measured By</label>
+                                                                                    <p>Performance</p>
+                                                                                    <label>Action Taken</label>
+                                                                                    <input type="text" class="form-control" value="" #perAction1="ngModel" name="perAction1" minlength="6" required ngModel>
+                                                                                    <div *ngIf="perAction1.errors && (perAction1.touched|| perAction1.dirty)" class="alert text-danger">
+                                                                                            <div [hidden]="!perAction1.errors.required">
+                                                                                                * Action is required
+                                                                                            </div> 
+                                                                                            <div [hidden]="!perAction1.errors.minlength">
+                                                                                                *Please enter minimum 6 character
+                                                                                            </div>                                                     
+                                                                                    </div>
+                                                                            </div>
+                                                                        <div class="row text-center">
+                                                                            <div class="col-md-6">
+                                                                                <button class="btn btn-round" type="button">Reset</button>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <button class="btn btn-primary btn-round" [disabled]="!personalaction1Form.valid" type="Submit">Submit</button>                                                                   
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>                                  
+                            </div>                                  
+                        </div>                                                          
+                    </div>
+                    <div class="card">
+                            <div class="card-header">
+                                <span>Team Goal</span>
+                            </div>
+                            <div class="card-body padding20">
+                                  <div class="row">
+                                      <div class="col-md-12">
+                                          <div id="accordion" role="tablist" aria-multiselectable="true" class="card-collapse">
+                                              <div class="card card-plain">
+                                                  <div class="card-header" role="tab" id="headingOne">
+                                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapsesOne" aria-expanded="true" aria-controls="collapseOne" class="">
+                                                          Goal 1
+                                                          <i class="now-ui-icons arrows-1_minimal-down float-right"></i>
+                                                      </a>
+                                                  </div>
+                                                  <div id="collapsesOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                                        <form #teamactionForm="ngForm" ngSubmit="onSave()">
+                                                                <div class="card-body">
+                                                                        <div class="form-group">
+                                                                                <label>Measured By</label>
+                                                                                <p>Performance</p>
+                                                                                <label>Action Taken</label>
+                                                                                <input type="text" class="form-control" value="" #teamAction="ngModel" name="teamAction" minlength="6" required ngModel>
+                                                                                <div *ngIf="teamAction.errors && (teamAction.touched|| teamAction.dirty)" class="alert text-danger">
+                                                                                        <div [hidden]="!teamAction.errors.required">
+                                                                                            * Action is required
+                                                                                        </div> 
+                                                                                        <div [hidden]="!teamAction.errors.minlength">
+                                                                                            *Please enter minimum 6 character
+                                                                                        </div>                                                     
+                                                                                </div>
+                                                                        </div>
+                                                                    <div class="row text-center">
+                                                                        <div class="col-md-6">
+                                                                            <button class="btn btn-round" type="button">Reset</button>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <button class="btn btn-primary btn-round" [disabled]="!teamactionForm.valid" type="Submit">Submit</button>                                                                   
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                  </div>
+                                                  <div class="card card-plain">
+                                                      <div class="card-header" role="tab" id="headingTwo">
+                                                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsesTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                              Goal 2
+                                                              <i class="now-ui-icons arrows-1_minimal-down float-right"></i>
+                                                          </a>
+                                                      </div>
+                                                      <div id="collapsesTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                            <form #teamaction1Form="ngForm" ngSubmit="onSave()">
+                                                                    <div class="card-body">
+                                                                            <div class="form-group">
+                                                                                    <label>Measured By</label>
+                                                                                    <p>Performance</p>
+                                                                                    <label>Action Taken</label>
+                                                                                    <input type="text" class="form-control" value="" #teamAction1="ngModel" name="teamAction1" minlength="6" required ngModel>
+                                                                                    <div *ngIf="teamAction1.errors && (teamAction1.touched|| teamAction1.dirty)" class="alert text-danger">
+                                                                                            <div [hidden]="!teamAction1.errors.required">
+                                                                                                * Action is required
+                                                                                            </div> 
+                                                                                            <div [hidden]="!teamAction1.errors.minlength">
+                                                                                                *Please enter minimum 6 character
+                                                                                            </div>                                                     
+                                                                                    </div>
+                                                                            </div>
+                                                                        <div class="row text-center">
+                                                                            <div class="col-md-6">
+                                                                                <button class="btn btn-round" type="button">Reset</button>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <button class="btn btn-primary btn-round" [disabled]="!teamaction1Form.valid" type="Submit">Submit</button>                                                                   
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>                                  
+                            </div>                                  
+                        </div>                                                          
+                    </div>
+                  </div>
+              </div>
+          </div>
+  </div>
+<app-footer></app-footer>
+</div>
